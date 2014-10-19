@@ -1,3 +1,36 @@
-<%@artists.each do |artist| %>
-<%= artist.first_name %>
+<h1> Artists </h1>
+
+<table>
+
+<tr> 
+<th> First Name </th>
+<th> Last Name </th>
+<th> Description </th>
+<th> Awards </th>
+<th> Image </th>
+<th> Actions </th>
+</tr>
+
+<tr>
+
+<% @artists.each do |artist| %>
+<td><%= link_to "#{artist.first_name}", artist_path(artist) %></td>
+
+<td><%= artist.last_name %></td>
+<td><%= artist.description %></td>
+<td><%= artist.award_log %></td>
+<td><%= artist.artist_image %></td>
+
+<td><%= link_to "Edit", edit_artist_path(artist) %>
+
+<%= link_to "Delete", artist, method: :delete, data:{confirm:"Are you sure?"} %>
+
+
+</td>
+
+</tr>
+</table>
 <%end%>
+
+
+<h3> <%= link_to "New Artist", new_artist_path %><h3>
