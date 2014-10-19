@@ -1,0 +1,41 @@
+<h1>Listing Posts</h1>
+ 
+<table>
+  <tr>
+    <th>Title</th>
+    <th>Text</th>
+  </tr>
+ 
+  <% @posts.each do |post| %>
+    <tr>
+      <td><%= post.title %></td>
+      <td><%= post.text %></td>
+    </tr>
+  <% end %>
+
+
+  <%= link_to 'New post', new_post_path %>
+
+  
+    <!-- #Unsure about this syntax. This link will bring up a new form that will allow us to make a new post but I am not sure how the syntax relates to where the user is directed in the app.  -->
+</table>
+  <tr>
+    <th>Title</th>
+    <th>Text</th>
+    <th colspan="2"></th>
+  </tr>
+ 
+<% @posts.each do |post| %>
+  <tr>
+    <td><%= post.title %></td>
+    <td><%= post.text %></td>
+    <td><%= link_to 'Show', post_path(post) %></td>
+    <td><%= link_to 'Edit', edit_post_path(post) %></td>
+    <td><%= link_to 'Destroy', article_path(article),
+                    method: :delete, data: { confirm: 'Are you sure?' } %></td>
+
+  </tr>
+<% end %>
+</table>
+ 
+ <!-- Note sure on this syntax. Ask about it.  -->

@@ -1,0 +1,26 @@
+<p>
+  <strong>Title:</strong>
+  <%= @post.title %>
+</p>
+ 
+<p>
+  <strong>Text:</strong>
+  <%= @post.text %>
+</p>
+
+<p>
+  <strong>Title:</strong>
+  <%= @post.title %>
+</p>
+ 
+<p>
+  <strong>Text:</strong>
+  <%= @post.text %>
+</p>
+ 
+<%= link_to 'Back', posts_path %>
+
+<!-- Confused on exactly what the "show.html.erb" page is actually doing? The posts/index.html.erb is clearly the "default" page for posts and the "new.html.erb" page is clearly the page for new posts. What is the "show.html.erb" page for?  -->
+
+<%= link_to 'Back', posts_path %>
+| <%= link_to 'Edit', edit_post_path(@post) %>
